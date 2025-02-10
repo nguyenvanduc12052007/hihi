@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trao đổi tài liệu học tập</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 0;
+        }
+        .top-bar {
+            background-color: #003d80;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        .top-bar a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .top-bar a:hover {
+            text-decoration: underline;
+        }
+        .banner {
+            text-align: center;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .banner img {
+            height: 80px;
+        }
+        nav {
+            background-color: #003d80;
+            padding: 10px;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            text-align: center;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+        .content {
+            padding: 20px;
+        }
+        .content h2 {
+            color: #003d80;
+        }
+        .content article {
+            background-color: white;
+            padding: 10px;
+            border: 1px solid #ccc;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .content article img {
+            width: 100%; /* Đặt chiều rộng hình ảnh bằng 100% */
+            height: auto; /* Tự động điều chỉnh chiều cao */
+            border-radius: 5px;
+        }
+        .login-modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            border-radius: 5px;
+        }
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+        .student-opinions {
+            padding: 20px;
+            background-color: #e6f7ff;
+            border: 1px solid #ccc;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .student-opinions h2 {
+            color: #003d80;
+        }
+        .student-opinions ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .student-opinions ul li {
+            margin: 5px 0;
+        }
+        .student-opinions form {
+            margin-top: 20px;
+        }
+        button {
+            background-color: #003d80;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #0056a1;
+        }
+        input[type="text"], input[type="password"], textarea {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="top-bar">
+            <a href="#" onclick="showLoginModal()">Đăng nhập</a>
+            <a href="#">Tài liệu ôn thi</a>
+            <a href="#">Hướng dẫn học tập</a>
+            <a href="#">Tra cứu điểm</a>
+            <a href="#">Liên hệ</a>
+        </div>
+        <div class="banner">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwmReBrZzBhTMLAt0a8kHqm-vfPzRh5TXcAQ&s/80" alt="Logo"> <!-- Hình ảnh logo từ trang web -->
+            <h1>CÙNG NHAU ĐỖ TỐT NGHIỆP THPT</h1>
+            <p>Chúng Mình Cùng Nhau Ôn Thi Nhé</p>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Trang chủ</a></li>
+                <li><a href="#">Tài liệu học tập</a></li>
+                <li><a href="#">Ôn thi tốt nghiệp</a></li>
+                <li><a href="#">Hướng dẫn</a></li>
+                <li><a href="#">Liên hệ</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="content">
+        
+        <section>
+            <h2>Bài giảng các môn học</h2>
+            <article>
+                <h3><a href="https://www.youtube.com/results?search_query=bài+giảng+môn+toán" target="_blank">Bài giảng môn Toán</a></h3>
+                <p>Các bài giảng video về lý thuyết và bài tập môn Toán.</p>
+            </article>
+            <article>
+                <h3><a href="https://www.youtube.com/results?search_query=bài+giảng+môn+văn" target="_blank">Bài giảng môn Văn</a></h3>
+                <p>Các bài giảng video về phân tích tác phẩm và làm văn.</p>
+            </article>
+            <article>
+                <h3><a href="https://www.youtube.com/results?search_query=bài+giảng+môn+anh" target="_blank">Bài giảng môn Anh</a></h3>
+                <p>Các bài giảng video về ngữ pháp và từ vựng tiếng Anh.</p>
+            </article>
+        </section>
+        <section>
+            <h2>Các liên kết tài liệu ôn thi lớp 12</h2>
+            <ul>
+                <li><a href="https://padlet.com/nggianghuong1993/trang-h-c-li-u-ng-v-n-ofkti2thi9er21ig/" target="_blank">Trang Học Liệu Ngữ Văn</a> - Tài liệu ôn thi môn ngữ văn .</li>
+                <li><a href="https://padlet.com/totoanthptgiolinh/b-ng-t-i-nguy-n-yy0nd9gkb68m5hi6/" target="_blank">Trang Học Liệu Toán Học</a> - Tài liệu ôn thi môn toán học.</li>
+                <li><a href="https://padlet.com/ninh595595/h-tr-h-c-t-p-tin-h-c-12-ct-gdpt-2018-dju1l10dgwyv3yk4/" target="_blank">Trang Học Liệu Tin Học</a> - Tài liệu ôn thi môn tin học.</li>
+                <li><a href="https://padlet.com/sangsuthptgl/k-nh-h-tr-h-c-t-p-online-history-ta77pr5qctee5mx9/" target="_blank">Trang Học Liệu Lịch Sử</a> - Tài liệu ôn thi môn lịch sử.</li>
+                <li><a href="https://padlet.com/sangtpv/k-nh-h-tr-h-c-t-p-m-n-a-l-q6wk74edrxj7xjm6/" target="_blank">Trang Học Liệu Địa Lí </a> - Tài liệu ôn thi môn địa lí.</li>
+                <li><a href="https://padlet.com/ploithptglgdcd/k-nh-h-tr-h-c-t-p-m-n-gdkt-pl-74zzfw5k427vwmt/" target="_blank">Trang Học Liệu Giáo Dục Kinh Tế Và Pháp Luật </a> - Tài liệu ôn thi môn giáo dục kinh tế và pháp luật .</li>
+            </ul>
+        </section>
+        <section>
+    <h2>Sách hữu ích cho ôn thi THPT</h2>
+    <ul>
+        <li><a href="https://tailieuonthi.edu.vn/pdf-tong-on-toan-hoc-tap-1/" target="_blank">Tài liệu ôn thi THPT Quốc gia môn Toán</a> - Sách tổng hợp lý thuyết và bài tập.</li>
+        <li><a href="https://tailieuonthi.edu.vn/tong-on-ngu-van-pdf/" target="_blank">Tài liệu ôn thi THPT Quốc gia môn Văn</a> - Sách phân tích tác phẩm và đề thi mẫu.</li>
+        <li><a href="https://www.sachhay.com.vn/sach/tu-lieu-on-thi-thpt-quoc-gia-mon-anh" target="_blank">Tài liệu ôn thi THPT Quốc gia môn Anh</a> - Sách ngữ pháp và từ vựng.</li>
+        <li><a href="https://www.sachhay.com.vn/sach/tu-lieu-on-thi-thpt-quoc-gia-mon-hoa" target="_blank">Tài liệu ôn thi THPT Quốc gia môn Hóa</a> - Sách lý thuyết và bài tập Hóa học.</li>
+        <li><a href="https://www.sachhay.com.vn/sach/tu-lieu-on-thi-thpt-quoc-gia-mon-sinh" target="_blank">Tài liệu ôn thi THPT Quốc gia môn Sinh</a> - Sách tổng hợp kiến thức Sinh học.</li>
+    </ul>
+</section>
+<script>
+    function calculateAverage() {
+        const mathGrade = parseFloat(document.getElementById('math-grade').value);
+        const literatureGrade = parseFloat(document.getElementById('literature-grade').value);
+        const englishGrade = parseFloat(document.getElementById('english-grade').value);
+        
+        // Kiểm tra xem các điểm có hợp lệ không
+        if (isNaN(mathGrade) || isNaN(literatureGrade) || isNaN(englishGrade)) {
+            alert('Vui lòng nhập điểm hợp lệ cho tất cả các môn.');
+            return;
+        }
+
+        // Tính trung bình
+        const average = (mathGrade + literatureGrade + englishGrade) / 3;
+        
+        // Hiển thị kết quả
+        document.getElementById('average-result').textContent = `Điểm trung bình học kỳ: ${average.toFixed(2)}`;
+    }
+</script>
+        <section>
+    <h2>Tải lên tài liệu PDF</h2>
+    <input type="file" id="pdf-upload" accept="application/pdf">
+    <button onclick="uploadPDF()">Tải lên</button>
+    <div id="pdf-list" style="margin-top: 20px;"></div>
+</section>
+         <section>
+    <h2>Tính điểm học kỳ</h2>
+    <form id="grade-form" onsubmit="event.preventDefault(); calculateAverage();">
+        <label for="math-grade">Điểm môn Toán:</label>
+        <input type="text" id="math-grade" placeholder="Nhập điểm môn Toán"><br>
+        
+        <label for="literature-grade">Điểm môn Văn:</label>
+        <input type="text" id="literature-grade" placeholder="Nhập điểm môn Văn"><br>
+        
+        <label for="english-grade">Điểm môn Anh:</label>
+        <input type="text" id="english-grade" placeholder="Nhập điểm môn Anh"><br>
+        
+        <button type="submit">Tính điểm trung bình</button>
+    </form>
+    <div id="average-result" style="margin-top: 20px;"></div>
+</section>
+
+
+        <section class="student-opinions">
+            <h2>Ý kiến học sinh</h2>
+            <ul id="opinions-list">
+                <li>"Trang web rất hữu ích, giúp tôi tìm được nhiều tài liệu ôn thi." - Học sinh A</li>
+                <li>"Tôi đã tìm thấy tài liệu môn Toán rất hay và dễ hiểu." - Học sinh B</li>
+                <li>"Các hướng dẫn học tập rất chi tiết và dễ áp dụng." - Học sinh C</li>
+                <li>"Rất cảm ơn trang web này đã giúp tôi ôn thi hiệu quả." - Học sinh D</li>
+            </ul>
+            <form onsubmit="event.preventDefault(); submitOpinion();">
+                <textarea id="opinion" rows="4" placeholder="Nhập ý kiến của bạn ở đây..."></textarea><br>
+                <button type="submit">Gửi ý kiến</button>
+            </form>
+        </section>
+    </main>
+    
+    <div class="overlay" id="overlay" onclick="closeLoginModal()"></div>
+    <div class="login-modal" id="loginModal">
+        <h2>Đăng nhập</h2>
+        <label for="username">Tên đăng nhập:</label>
+        <input type="text" id="username"><br>
+        <label for="password">Mật khẩu:</label>
+        <input type="password" id="password"><br>
+        <button onclick="login()">Đăng nhập</button>
+        <button onclick="closeLoginModal()">Hủy</button>
+    </div>
+
+    <script>
+        function showLoginModal() {
+            document.getElementById('loginModal').style.display = 'block';
+            document.getElementById('overlay').style.display = 'block';
+        }
+
+        function closeLoginModal() {
+            document.getElementById('loginModal').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+        }
+
+        function login() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            // Thực hiện xác thực ở đây (ví dụ: gọi API)
+            alert(`Đăng nhập với tên: ${username} và mật khẩu: ${password}`);
+            closeLoginModal();
+        }
+
+        function uploadPDF() {
+            const fileInput = document.getElementById('pdf-upload');
+            const pdfList = document.getElementById('pdf-list');
+
+            if (fileInput.files.length === 0) {
+                alert('Vui lòng chọn một file PDF để tải lên.');
+                return;
+            }
+
+            const file = fileInput.files[0];
+
+            if (file.type !== 'application/pdf') {
+                alert('Vui lòng chọn file PDF hợp lệ.');
+                return;
+            }
+
+            const fileURL = URL.createObjectURL(file);
+            
+            // Tạo một liên kết để người dùng có thể tải xuống file
+            const link = document.createElement('a');
+            link.href = fileURL;
+            link.textContent = file.name;
+            link.target = '_blank'; // Mở liên kết trong tab mới
+            link.style.display = 'block'; // Hiển thị mỗi file trên một dòng
+
+            // Thêm liên kết vào danh sách
+            pdfList.appendChild(link);
+        }
+
+        function submitOpinion() {
+            const opinion = document.getElementById('opinion').value;
+            if (opinion) {
+                // Thêm ý kiến mới vào danh sách
+                const opinionsList = document.getElementById('opinions-list');
+                const newOpinion = document.createElement('li');
+                newOpinion.textContent = opinion; // Thêm ý kiến vào danh sách
+                opinionsList.appendChild(newOpinion);
+                
+                alert(`Ý kiến của bạn đã được gửi: "${opinion}"`);
+                document.getElementById('opinion').value = ''; // Xóa nội dung sau khi gửi
+            } else {
+                alert('Vui lòng nhập ý kiến của bạn.');
+            }
+        }
+    </script>
+</body>
+</html>
