@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng ký</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        h1 {
+            color: #003d80;
+        }
+        input[type="text"], input[type="password"] {
+            width: 300px;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #003d80;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056a1;
+        }
+    </style>
+</head>
+<body>
+    <h1>Đăng ký tài khoản</h1>
+    <label for="reg-username">Tên đăng nhập:</label><br>
+    <input type="text" id="reg-username"><br>
+    <label for="reg-password">Mật khẩu:</label><br>
+    <input type="password" id="reg-password"><br>
+    <label for="reg-confirm-password">Xác nhận mật khẩu:</label><br>
+    <input type="password" id="reg-confirm-password"><br>
+    <button onclick="register()">Đăng ký</button>
+    <button onclick="window.location.href='login.html'">Đăng nhập</button>
+
+    <script>
+        function register() {
+            const username = document.getElementById('reg-username').value;
+            const password = document.getElementById('reg-password').value;
+            const confirmPassword = document.getElementById('reg-confirm-password').value;
+
+            if (password !== confirmPassword) {
+                alert("Mật khẩu không khớp. Vui lòng kiểm tra lại.");
+                return;
+            }
+
+            // Lưu thông tin người dùng vào localStorage
+            localStorage.setItem(username, password);
+            alert(`Đăng ký thành công với tên: ${username}`);
+            window.location.href = 'login.html'; // Chuyển đến trang đăng nhập
+        }
+    </script>
+</body>
+</html>
