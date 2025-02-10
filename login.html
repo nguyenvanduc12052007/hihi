@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng nhập</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        h1 {
+            color: #003d80;
+        }
+        input[type="text"], input[type="password"] {
+            width: 300px;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #003d80;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056a1;
+        }
+    </style>
+</head>
+<body>
+    <h1>Đăng nhập</h1>
+    <label for="username">Tên đăng nhập:</label><br>
+    <input type="text" id="username"><br>
+    <label for="password">Mật khẩu:</label><br>
+    <input type="password" id="password"><br>
+    <button onclick="login()">Đăng nhập</button>
+    <button onclick="window.location.href='register.html'">Đăng ký</button>
+
+    <script>
+        function login() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Kiểm tra thông tin đăng nhập
+            const storedUser  = localStorage.getItem(username);
+            if (storedUser  && storedUser  === password) {
+                alert(`Đăng nhập thành công với tên: ${username}`);
+                // Chuyển đến trang chính hoặc nội dung chính của bạn
+                window.location.href = 'main.html'; // Thay đổi thành trang chính của bạn
+            } else {
+                alert('Tên đăng nhập hoặc mật khẩu không đúng.');
+            }
+        }
+    </script>
+</body>
+</html>
